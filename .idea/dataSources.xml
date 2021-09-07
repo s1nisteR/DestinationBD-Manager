@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="mdh database" uuid="e0e5a9ea-87cf-42d8-a416-aa95155f1673">
+    <data-source source="LOCAL" name="db" uuid="9283043e-95a1-4e2d-ba40-6b429969943a">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://remotemysql.com:3306/lbBEO2jbap</jdbc-url>
+      <jdbc-url>jdbc:mysql://sql6.freesqldatabase.com:3306/sql6435290</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>
