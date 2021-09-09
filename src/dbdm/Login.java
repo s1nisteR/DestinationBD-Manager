@@ -29,6 +29,10 @@ public class Login implements ActionListener
         demo.setFocusPainted(false);
         demo.setBorderPainted(false);
         demo.setVisible(false);
+        demo.addActionListener(e -> {
+            Warehouse warehouse = new Warehouse(true);
+            m_frame.dispose();
+        });
         username = new JTextField("");
         username.setBackground(new Color(36, 137, 171));
         username.setForeground(new Color(255, 255, 255));
