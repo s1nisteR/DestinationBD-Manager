@@ -76,6 +76,7 @@ public class Login implements ActionListener
         try
         {
             //Class.forName("com.mysql.jdbc.Driver");
+            //database stuff
             m_conn = DriverManager.getConnection("jdbc:mysql://db4free.net/mdhdatabase", "mdhdatabase", "Ankon14411441");
             login.setEnabled(true);
             status.setText("Connection Status: Active");
