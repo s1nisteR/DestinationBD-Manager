@@ -11,6 +11,7 @@ import java.util.Objects;
 import java.io.File;
 import java.util.Scanner;
 
+
 public class Management
 {
     final JToolBar toolbar;
@@ -77,6 +78,12 @@ public class Management
         t_ship = new JButton(new ImageIcon(new ImageIcon(Objects.requireNonNull(getClass().getResource("/resources/ship.png"))).getImage().getScaledInstance(20, 20, Image.SCALE_SMOOTH)));
         t_ship.setFocusPainted(false);
         t_ship.setBorderPainted(true);
+        t_ship.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Ship sh = new Ship(model);
+            }
+        });
         t_info = new JButton(new ImageIcon(new ImageIcon(Objects.requireNonNull(getClass().getResource("/resources/info.png"))).getImage().getScaledInstance(20, 20, Image.SCALE_SMOOTH)));
         t_info.setFocusPainted(false);
         t_info.setBorderPainted(true);
@@ -105,6 +112,12 @@ public class Management
             }
         });
         ship = new JMenuItem("Ship");
+        ship.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Ship sh = new Ship(model);
+            }
+        });
         warehouseSelection = new JMenuItem("Warehouse Selection");
         warehouseSelection.addActionListener(e -> {
             Warehouse warh = new Warehouse(isDemo);
