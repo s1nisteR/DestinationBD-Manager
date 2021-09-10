@@ -27,19 +27,17 @@ public class Management
     final JMenuItem save;
     final JButton t_add;
     final JButton t_remove;
-    final JButton t_up;
-    final JButton t_down;
     final JButton t_ship;
     final JButton t_info;
     final JMenuItem remove;
     final JMenuItem exit;
-    final JMenuItem moveUp;
-    final JMenuItem moveDown;
+    //final JMenuItem moveUp;
+    //final JMenuItem moveDown;
     final JMenuItem ship;
     final JMenuItem warehouseSelection;
     final JMenuItem about;
     final JMenu help;
-    final JMenu edit;
+    //final JMenu edit;
     final JFrame m_frame;
     final JMenuBar menubar;
     Management(String warehouse, boolean isDemo)
@@ -64,12 +62,18 @@ public class Management
         t_remove = new JButton(new ImageIcon(new ImageIcon(Objects.requireNonNull(getClass().getResource("/resources/remove.png"))).getImage().getScaledInstance(20, 20, Image.SCALE_SMOOTH)));
         t_remove.setFocusPainted(false);
         t_remove.setBorderPainted(true);
-        t_up = new JButton(new ImageIcon(new ImageIcon(Objects.requireNonNull(getClass().getResource("/resources/up.png"))).getImage().getScaledInstance(20, 20, Image.SCALE_SMOOTH)));
-        t_up.setFocusPainted(false);
-        t_up.setBorderPainted(true);
-        t_down = new JButton(new ImageIcon(new ImageIcon(Objects.requireNonNull(getClass().getResource("/resources/down.png"))).getImage().getScaledInstance(20, 20, Image.SCALE_SMOOTH)));
-        t_down.setFocusPainted(false);
-        t_down.setBorderPainted(true);
+        t_remove.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                model.removeRow(model.getRowCount() - 1);
+            }
+        });
+        //t_up = new JButton(new ImageIcon(new ImageIcon(Objects.requireNonNull(getClass().getResource("/resources/up.png"))).getImage().getScaledInstance(20, 20, Image.SCALE_SMOOTH)));
+        //t_up.setFocusPainted(false);
+        //t_up.setBorderPainted(true);
+        //t_down = new JButton(new ImageIcon(new ImageIcon(Objects.requireNonNull(getClass().getResource("/resources/down.png"))).getImage().getScaledInstance(20, 20, Image.SCALE_SMOOTH)));
+        //t_down.setFocusPainted(false);
+        //t_down.setBorderPainted(true);
         t_ship = new JButton(new ImageIcon(new ImageIcon(Objects.requireNonNull(getClass().getResource("/resources/ship.png"))).getImage().getScaledInstance(20, 20, Image.SCALE_SMOOTH)));
         t_ship.setFocusPainted(false);
         t_ship.setBorderPainted(true);
@@ -87,6 +91,12 @@ public class Management
             }
         });
         remove = new JMenuItem("Remove");
+        remove.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                model.removeRow(model.getRowCount() - 1);
+            }
+        });
         save = new JMenuItem("Save");
         save.addActionListener(new ActionListener() {
             @Override
@@ -113,17 +123,17 @@ public class Management
         file.add(warehouseSelection);
         file.addSeparator();
         file.add(exit);
-        edit = new JMenu("Edit");
-        moveUp = new JMenuItem("Move Up");
-        moveDown = new JMenuItem("Move Down");
-        edit.add(moveUp);
-        edit.add(moveDown);
+        //edit = new JMenu("Edit");
+        //moveUp = new JMenuItem("Move Up");
+        //moveDown = new JMenuItem("Move Down");
+        //edit.add(moveUp);
+        //add(moveDown);
         help = new JMenu("Help");
         about = new JMenuItem("About");
 
         help.add(about);
         menubar.add(file);
-        menubar.add(edit);
+        //menubar.add(edit);
         menubar.add(help);
         toolbar = new JToolBar();
         toolbar.setRollover(true);
@@ -132,9 +142,9 @@ public class Management
         toolbar.addSeparator(new Dimension(5, 0));
         toolbar.add(t_remove);
         toolbar.addSeparator(new Dimension(5, 0));
-        toolbar.add(t_up);
+        //toolbar.add(t_up);
         toolbar.addSeparator(new Dimension(5, 0));
-        toolbar.add(t_down);
+        //toolbar.add(t_down);
         toolbar.addSeparator(new Dimension(5, 0));
         toolbar.add(t_ship);
         toolbar.addSeparator(new Dimension(5, 0));
