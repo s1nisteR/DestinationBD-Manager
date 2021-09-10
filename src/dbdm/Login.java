@@ -76,7 +76,7 @@ public class Login implements ActionListener
         try
         {
             //Class.forName("com.mysql.jdbc.Driver");
-            m_conn = DriverManager.getConnection("jdbc:mysql://sql6.freesqldatabase.com/sql6435290", "sql6435290", "STTp3Z8AUL");
+            m_conn = DriverManager.getConnection("jdbc:mysql://db4free.net/mdhdatabase", "mdhdatabase", "Ankon14411441");
             login.setEnabled(true);
             status.setText("Connection Status: Active");
             status.setForeground(new Color(0, 255, 0));
@@ -123,7 +123,7 @@ public class Login implements ActionListener
     {
         try
         {
-            String sql = "SELECT count(*) FROM Users WHERE username=? and password=?";
+            String sql = "SELECT count(*) FROM User WHERE username=? and password=?";
             PreparedStatement loginStatement = conn.prepareStatement(sql);
             loginStatement.setString(1, username);
             loginStatement.setString(2, String.copyValueOf(password));
