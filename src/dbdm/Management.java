@@ -250,7 +250,7 @@ public class Management
         {
             for(i = 0; i < 300; ++i)
             {
-                model.insertRow(i, new Object[] {"Demo", "Demo","Demo","Demo","Demo","Demo"});
+                model.insertRow(i, new Object[] {"Demo", "Demo","Demo","Demo","0.1","Demo"});
             }
             return model;
         }
